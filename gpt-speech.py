@@ -4,6 +4,9 @@ from datasets import load_dataset
 import torch
 import sounddevice as sd
 import numpy as np
+import json
+import os
+
 
 config_file_path = '/etc/python-gpt.json'
 openai_api_key = None
