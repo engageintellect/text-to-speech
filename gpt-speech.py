@@ -1,11 +1,20 @@
 from openai import OpenAI
-
-# client = OpenAI(api_key='')
 from transformers import pipeline
 from datasets import load_dataset
 import torch
 import sounddevice as sd
 import numpy as np
+
+config_file_path = '/etc/python-gpt.json'
+openai_api_key = None
+
+if os.path.exists(config_file_path):
+    with open(config_file_path) as config_file:
+        openai_api_key = json.load(config_file).get('OPENAI_API_KEY', "")
+else:
+    raise FileNotFoundError(f"Config file not found at {config_file_path}")
+
+client = OpenAI(api_key=openai_api_key)
 
 # Initialize the text-to-speech pipeline
 synthesiser = pipeline("text-to-speech", "microsoft/speecht5_tts")
