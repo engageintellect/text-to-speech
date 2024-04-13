@@ -2,7 +2,9 @@
 
 ## Description
 
-This is a simple text-to-speech program that uses the Google Text-to-Speech API to convert text to speech. The program takes a string as input and outputs an audio file of the speech. The program can be run from the command line and takes the input string as an argument.
+This is a simple text-to-speech engine using microsoft/speecht5_tts and OpenAI.
+
+The program takes a string as input and outputs an audio file of the speech. The program can be run from the command line and takes the input string as an argument.
 
 ## Usage
 
