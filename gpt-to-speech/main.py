@@ -6,9 +6,10 @@ import sounddevice as sd
 import numpy as np
 import json
 import os
+import subprocess
 
 
-config_file_path = '/etc/python-gpt.json'
+config_file_path = '/etc/api-keys.json'
 openai_api_key = None
 
 if os.path.exists(config_file_path):
@@ -50,6 +51,7 @@ def speak_text(text):
     print("Playback finished.")
 
 if __name__ == "__main__":
+    subprocess.call("figlet -f slant 'Text to Speech'", shell=True) 
     while True:
         print("\nText to Speech using ChatGPT")
         user_input = input("Enter your query (or type 'exit' to quit): ")
