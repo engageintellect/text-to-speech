@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-client = OpenAI(api_key='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')
+client = OpenAI(api_key='')
 from transformers import pipeline
 from datasets import load_dataset
 import torch
